@@ -3,35 +3,53 @@ class Passenger {
         this.km = km;
         this.age = age;
     }
+
+    kmInit() {
+        this.km = parseInt(prompt("quanti chilometri vuoi percorrere?"));
+    }
+
+    ageInit(correct) {
+        while (!correct) {
+            this.age = parseInt(prompt("quanti anni hai?"));
+        
+            if (this.age >= 0 && this.age <= 110) {
+                correct = true;
+                console.log("age accepted");
+                return this.age;
+            } else {
+                console.log("not valid number in age field");
+            }
+        }
+    }
+
+    priceCalc() {
+        if (this.age > 65) {
+            let price = this.km * 0.21;
+            return price = Math.round(((price / 100) * 60) * 100) / 100;
+        } else if (this.age < 20) {
+            let price = this.km * 0.21;
+            return price = Math.round(((price / 100) * 80) * 100) / 100;
+
+        } else {
+            let price = this.km * 0.21;
+            return price = Math.round((price) * 100) / 100;
+        }
+    }
 }
 
 // object creation
 
-var pass1 = new Passenger();
+let pass1 = new Passenger();
 
 // km prompt
 
-// pass1.km = parseInt(prompt("quanti chilometri vuoi percorrere?"));
+pass1.kmInit();
 
 // age prompt
 
-// var correct = false; 
-
-// while (!correct) {
-//     pass1.age = parseInt(prompt("quanti anni hai?"));
-
-//     if (pass1.age >= 0 && pass1.age <= 110) {
-//         correct = true;
-//         console.log("age accepted");
-//     } else {
-//         console.log("not valid number in age field");
-//     }
-// }
-
-
+pass1.ageInit(false);
 
 // price calc
 
-if (pass1.age > 65) {
-
-}
+currPrice = pass1.priceCalc();
+console.log(`${currPrice} euro`);
