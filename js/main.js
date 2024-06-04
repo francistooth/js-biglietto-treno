@@ -52,4 +52,6 @@ pass1.ageInit(false);
 // price calc
 
 currPrice = pass1.priceCalc();
-console.log(`${currPrice} euro`);
+// console.log(`${currPrice} euro`);
+
+document.getElementById('mytitle').innerHTML = (`${currPrice} euro`);
