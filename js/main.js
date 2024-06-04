@@ -28,6 +28,8 @@ var pass1 = new Passenger();
 //     }
 // }
 
+
+
 // price calc
 
 if (pass1.age > 65) {
